@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mt-3">
+            <div class="card">
+                <div class="card-header">Skaičiuoklė</div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="" class="form-label">Įveskite skaičių X</label>
+                        <input type="text" class="form-control" [(ngModel)]="x">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Įveskite skaičių Y</label>
+                        <input type="text" class="form-control" [(ngModel)]="y" >
+                    </div>
+                    <button class="btn btn-success" [disabled]="!x || !y" (click)="skaiciuoti()">Skaičiuoti</button>
+                    <div class="alert mt-3" [hidden]="!sandauga" [ngClass]="{
+                                                                'alert-success':sandauga<50, 
+                                                                'alert-warning':sandauga>=50 && sandauga<100,
+                                                                'alert-danger':sandauga>=100}">
+                        Skaičių sandauga: {{ sandauga }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
